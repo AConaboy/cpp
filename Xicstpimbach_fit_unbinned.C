@@ -24,7 +24,7 @@ using std::cout;
 using std::endl;
 using std::ofstream;
 
-void Xicstpimbach_fit_TEST2()
+void Xicstpimbach_fit_unbinned()
 {
 
   // TString afs_home = "/afs/cern.ch/work/a/aconaboy/";
