@@ -114,11 +114,7 @@ void Xicstpimbach_fit_yields()
   TH1F* h_XicstpimBKG = new TH1F("h_XicstpimBKG","m(#Xi^{*+}_{c}#pi^{-})", 100, 2785, 3085);
 
   treeXipi.Draw("Omegacst_M_DTF_Xic_PV >> h_Xicstpim", pimbach_cuts +"&"+ Xic0pip_cuts);
-  // treeXipi.Draw("Omegacst_M_DTF_Xic_PV >> h_Xicstpim", pimbach_cuts +"&"+ Xic0pip_cuts); 
-  //treeXipi.Draw("Omegacst_M_DTF_Xic_PV >> h_XicstpimBKG",pimbach_cuts +"&"+ (upperXicSideband_cuts +"|"+ lowerXicSideband_cuts + "|" + middleXicSideband_cuts));
   treeXipi.Draw("Omegacst_M_DTF_Xic_PV >> h_XicstpimBKG",pimbach_cuts +"&"+ upperXicSideband_cuts +"|"+ lowerXicSideband_cuts);
-  //treeXipi.Draw("Omegacst_M_DTF_Xic_PV >> h_XicstpimBKG",pimbach_cuts +"&"+ lowerXicSideband_cuts +"|"+ middleXicSideband_cuts);
-  //treeXipi.Draw("Omegacst_M_DTF_Xic_PV >> h_XicstpimBKG",pimbach_cuts +"&"+ upperXicSideband_cuts);
 
   RooDataHist Xicstpim_data("Xicstpim_data", "Xicstpim_data", M, h_Xicstpim);
   RooFitResult* res = sigXicstpim.fitTo(Xicstpim_data, Save(), Optimize(false), Extended());
