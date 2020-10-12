@@ -130,7 +130,7 @@ void Xicstpimbach_fit_unbinned()
   treeXipi.Draw("Omegacst_M_DTF_Xic_PV >> h_XicstpimBKG",pimbach_cuts +"& ("+ upperXicSideband_cuts +"|"+ lowerXicSideband_cuts +")");
 
   RooDataHist Xicstpim_data("Xicstpim_data", "Xicstpim_data", Omegacst_M_DTF_Xic_PV, h_Xicstpim);
-  //sigXicstpim.chi2FitTo(Xicstpim_data);
+  sigXicstpim.chi2FitTo(Xicstpim_data);
 
   RooFitResult* res = sigXicstpim.fitTo(data, Extended(), Optimize(false), Save());
  std::cout << "likelihood " << res->minNll() << std::endl;
