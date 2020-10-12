@@ -24,7 +24,7 @@ using std::cout;
 using std::endl;
 using std::ofstream;
 
-void Xicstpimbach_fit_matt()
+void Xicstpimbach_fit()
 {
 
   TString afs_home = "/Users/needham/andrew/";
