@@ -30,19 +30,11 @@ void Xicstpimbach_fit_unbinned()
   // TString afs_home = "/afs/cern.ch/work/a/aconaboy/";
 
   TChain treeXipi("DecayTree");
-  //TChain tree_lumi("GetIntegratedLuminosity/LumiTuple");
-
-  //TString Xic_cuts("p_ProbNNp>0.8 & K1_ProbNNk>0.8 & K2_ProbNNk>0.8 & pip_ProbNNpi>0.8 & Xic_IPCHI2_OWNPV<16 & Xic_ENDVERTEX_CHI2/Xic_ENDVERTEX_NDOF<3 & Xic_M>2460 & Xic_M<2480 & Omegacst_PT>5000");
-  
-  //TString pibach_cuts = "pipbach_ProbNNpi>0.7 & pipbach_IPCHI2_OWNPV < 9 & Omegacst_CHI2NDOF_DTF_Xic_PV<3 & Omegacst_CHI2NDOF_DTF_Xic_PV > 0 & pipbach_PT>500";
 
   TString pimbach_cuts = "pimbach_ProbNNpi>0.7 & pimbach_IPCHI2_OWNPV < 9 & pimbach_PT>550";
   TString Xic0pip_cuts = "Omegacst_M12_DTF_Xic_PV>2642. & Omegacst_M12_DTF_Xic_PV<2648.7";
 
   treeXipi.Add("Xicst_Xic0pipi_ALLCUT.root");
-  //tree_lumi.Add(afs_home + "Xicst_Xic0pipi_ALL.root");
-
-
   TFile* theFile = new TFile("Xicst_Xic0pipi_ALLCUT.root");
   
   TTree* theTree = (TTree*)theFile->Get("DecayTree");
