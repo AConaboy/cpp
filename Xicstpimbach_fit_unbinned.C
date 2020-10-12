@@ -45,17 +45,11 @@ void Xicstpimbach_fit_unbinned()
 
   TFile* theFile = new TFile("Xicst_Xic0pipi_ALLCUT.root");
   
-  //TTree* theTree = (TTree*)theFile->Get("Lc2PKPiTree/Dec/path/to/CharmWGProd/test_locally.py PRODUCTION_NAME JOB_NAME --n-events=-1
-  // For example to run the 2016 MagDown job from the productions/d2hll folder
-  ///path/to/CharmWGProd/test_locally.py d2hll 2016_MagDown --n-events=-1ayTree");
   TTree* theTree = (TTree*)theFile->Get("DecayTree");
   
   // -----------------------Fitting ----------------------------------//
 
   RooRealVar Omegacst_M_DTF_Xic_PV("Omegacst_M_DTF_Xic_PV", "Omegacst_M_DTF_Xic_PV", 2785, 3085); // Mass range for Xicstpim plot&fit                                  
-
-  //RooRealVar m("Delta_Mcorr","Delta_Mcorr", 60, 200);
-  
 
   RooRealVar pimbach_ProbNNpi("pimbach_ProbNNpi", "pimbach_ProbNNpi", 0.7,1.);
   RooRealVar pimbach_IPCHI2_OWNPV("pimbach_IPCHI2_OWNPV", "pimbach_IPCHI2_OWNPV", 0.,9.);
